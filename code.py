@@ -18,9 +18,11 @@ def hit():
 	# Load Page
 	print("Loading page...")
 	driver.get("http://www.slutbags.tk")
+	print(driver)
 	print("Page loaded...")
 	time.sleep(3)
 
+	print(driver.window_handles)
 	# Scroll home page
 	print("Scrolling page... " + driver.title)
 	driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
@@ -39,6 +41,7 @@ def hit():
 	print("Clicking Popunder element of " + driver.title)
 	body[0].click()
 	time.sleep(3)
+	print(driver.window_handles)
 
 	# Switch window to popunder ad
 	print("Switching pages from " + driver.title + " to ")
@@ -66,17 +69,19 @@ def hit():
 	print("Clicking ad elements on " + driver.title)
 	ads[0].click()
 	time.sleep(3)
+	print(driver.window_handles)
 
 	# Switch window to text ad
 	print("Switching from " + driver.title + " to -----> ERR HERE | DEH IS NOT AD RENDERING ")
-	driver.switch_to.window(driver.window_handles[2])
-	print(driver.title)
-	time.sleep(5)
+	if len(driver.window_handles)) == 3:
+		driver.switch_to.window(driver.window_handles[2])
+		print(driver.title)
+		time.sleep(5)
 
-	# Scroll the ad page
-	print("Scrolling page: " + driver.title )
-	driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
-	time.sleep(3)
+		# Scroll the ad page
+		print("Scrolling page: " + driver.title )
+		driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
+		time.sleep(3)
 
 	# Switch page to home
 	print("Switching from page " + driver.title + " to home page... ")
@@ -84,8 +89,13 @@ def hit():
 	print(driver.title)
 	time.sleep(3)
 
+
+	# Closing tabs
+	print("Closing tabs...")
+	print(driver.window_handles)
 	for tab in driver.window_handles:
 		driver.switch_to.window(tab)
+		print("Closing " + driver.title)
 		time.sleep(3)
 		driver.close()
 
