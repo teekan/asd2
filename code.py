@@ -73,7 +73,7 @@ def hit():
 
 	# Switch window to text ad
 	print("Switching from " + driver.title + " to -----> ERR HERE | DEH IS NOT AD RENDERING ")
-	if len(driver.window_handles)) == 3:
+	if len(driver.window_handles) == 3:
 		driver.switch_to.window(driver.window_handles[2])
 		print(driver.title)
 		time.sleep(5)
