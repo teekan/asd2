@@ -52,7 +52,7 @@ def hit():
 	time.sleep(3)
 
 	# Switch window to text ad
-	driver.switch_to_window(driver.window_handles[2])
+	driver.switch_to.window(driver.window_handles[2])
 	time.sleep(5)
 
 	# Scroll the ad page
@@ -60,7 +60,7 @@ def hit():
 	time.sleep(3)
 
 	# Switch page to home
-	driver.switch_to_window(driver.window_handles[1])
+	driver.switch_to.window(driver.window_handles[1])
 	time.sleep(3)
 
 	for tab in driver.window_handles:
