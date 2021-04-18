@@ -32,7 +32,7 @@ def hit():
 			driver.close()
 		subprocess.run(['sudo','./delete-profiles.sh'])
 	except Exception:
-		subprocess.run(['sudo','python3','code.py'])
+		print("Failed")
 while True:
 	hit()
 
