@@ -44,7 +44,8 @@ def hit():
 	# Wrapping Up
 	print("All tab after process")
 	print(driver.window_handles)
-
+	time.sleep(2)
+	
 	# Closing tabs
 	print("Closing tabs...")
 	for tab in driver.window_handles:
